@@ -11,17 +11,47 @@
 * Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 * This theme, like WordPress, is licensed under the GPL.
 */
+
+@mixin responsiveBrk768() {
+	@content
+}
+
+@mixin flex($f : 'row', $w: 'nowrap', $ai: 'auto', $jc: 'auto') {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	flex-flow: $f $w;
+	align-items: $ai;
+	justify-content:  $jc;
+}
+
+@mixin rv768($val : 'min') {
+	@media screen and (#{$val}-width: 768px ) {
+		@content;
+	}
+}
+
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0; }
+	// Resetting styles
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
 
-header.hero {
-  width: 100vw;
-  height: 100vh; }
+body {
+}
 
-@media screen and (min-width: 768px) {
-  .nav-toggler {
-    display: none; } }
+header {
+	&.hero {
+		width: 100vw;
+		height: 100vh;
+	}
+}
 
-/*# sourceMappingURL=style.css.map */
+.nav {
+	@include rv768() {
+		&-toggler {
+			display: none;
+		}
+	}
+}
