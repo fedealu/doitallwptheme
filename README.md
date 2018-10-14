@@ -1,7 +1,7 @@
-#Do it all Wordpress Theme
+# Do it all Wordpress Theme
 
-##Welcoming Description
+## Welcoming Description
 Multipurpose responsive theme. v1.0
 
-##Author
+## Author
 Federico Aluma for www.iConsulting.com.ar
